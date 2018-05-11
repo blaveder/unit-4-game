@@ -43,9 +43,13 @@ $(document).ready(function () {
     const newLocal_3 = "assets/images/green.png";
 
     var gems = [newLocal, newLocal_1, newLocal_2, newLocal_3];
-    var gemRandomNumber = Math.floor((Math.random() * 15) + 2);
+    var gemRandomNumber;
 
     for (var j = 0; j < gems.length; j++) {
+
+        // New random number gets generated and then assigned for each iteration in the for loop
+        gemRandomNumber = Math.floor((Math.random() * 15) + 2);
+
         // create a div called gemContainer
         var gemContainer = $("<div id='gemContainer'></div>");
 
@@ -54,23 +58,43 @@ $(document).ready(function () {
         //create an image
         var gemsDynamicImages = $("<img>");
 
-        gemsDynamicImages.attr({ class: "gemImg animated hvr-push", src: gems[j], data: gemRandomNumber });
+
+
+        gemsDynamicImages.attr({ class: "gemImg animated hvr-push " + j, src: gems[j], data: gemRandomNumber });
         //append image to div#gemContainer
         $(gemContainer).append(gemsDynamicImages);
+
 
     };
     document.getElementById("score").innerHTML = score;
 
     function clear() {
-        gemRandomNumber = Math.floor((Math.random() * 15) + 2);
-        gemsDynamicImages.attr({ class: "gemImg animated hvr-push", src: gems[j], data: gemRandomNumber });
-        $(gemContainer).append(gemsDynamicImages);
+        // gemRandomNumber = Math.floor((Math.random() * 15) + 2);
+
+
+        // gemsDynamicImages.attr({ class: "gemImg animated hvr-push", src: gems[j], data: otherRandomNumber });
+        for (var z = 0; z < gems.length; z++) {
+            // var otherRandomNumber = ;
+            $("." + z).attr({ data: Math.floor((Math.random() * 15) + 2) });
+
+
+            // $(gemContainer).append(newGem);
+        }
+
+
+
+
+
+
         score = Math.floor(Math.random() * 121) + 19;
         document.getElementById("score").innerHTML = score;
         console.log("this running");
         yourScore = 0;
         document.getElementById("yourScore").innerHTML = yourScore;
     };
+
+
+
 
 
     $(".gemImg").on("click", function () {

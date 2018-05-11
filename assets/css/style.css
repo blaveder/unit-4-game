@@ -1,3 +1,29 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+header {
+  font-weight: 700;
+  text-align: center;
+  padding: 2% 0;
+  margin: 0 0 2% 0;
+  border-bottom: 1px solid lightgray;
+}
+.padding {
+  padding: 0 10%;
+}
+.scoreBoard {
+  border: 1px solid black;
+  padding: 2%;
+  font-weight: 700;
+  color: darkgray;
+}
+.topScore {
+  padding-bottom: 2%;
+  border-bottom: 1px solid lightgrey;
+}
+p.instructionP {
+  margin-bottom: 10px;
+}
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
